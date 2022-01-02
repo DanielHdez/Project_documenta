@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000010</LENG>
+    <OUTPUTLEN>000010</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Estatus del incidente</DDTEXT>
+    <DOMMASTER>E</DOMMASTER>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>EN DESARRO</DOMVALUE_L>
+     <DDTEXT>El cambio esta desrrollandose en D11</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>PRUE_D11</DOMVALUE_L>
+     <DDTEXT>Pruebas en Desarrollo por parte del usuario</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>P_EVALUCIO</DOMVALUE_L>
+     <DDTEXT>Pendiente de aprobacion  por calidad evaluación del cambio (</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>APR_EVALU</DOMVALUE_L>
+     <DDTEXT>Aprobada la evalucion por calidad</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>EN CALIDAD</DOMVALUE_L>
+     <DDTEXT>El cambio esta en calidad, pendiente de pruebas por el usuar</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>FIN_PRUEBA</DOMVALUE_L>
+     <DDTEXT>El cambio esta en calidad, pruebas realizadas con éxito</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>P_CAMBIO</DOMVALUE_L>
+     <DDTEXT>Pendiente de aprobacion  por calidad  del cambio (sub a P11)</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0008</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>APRO_CAMBI</DOMVALUE_L>
+     <DDTEXT>El cambio ha sido aprobado para subir a P11</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0009</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>EN PRODUCT</DOMVALUE_L>
+     <DDTEXT>El cambio esta en productivo</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0010</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>P_CIERRE</DOMVALUE_L>
+     <DDTEXT>Pendiente de cierre por calidad</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZD_STATUS_DOCUMENTA</DOMNAME>
+     <VALPOS>0011</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>CERRADO</DOMVALUE_L>
+     <DDTEXT>La documentación esta cerrada</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
