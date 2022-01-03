@@ -26,4 +26,5 @@ composition [0..*] of ZI_Documenta_DHL as _Documenta
     @Semantics.user.lastChangedBy: true
     lchg_uname,
     _Documenta 
+    
 }

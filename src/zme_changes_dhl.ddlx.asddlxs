@@ -1,0 +1,67 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {
+    headerInfo: {
+        typeName: 'Propuesta',
+        typeNamePlural: 'Propuestas',
+        title: {
+            type: #STANDARD,
+            label: 'Cambios propuestos',
+           value: 'Id'
+                    }}}
+
+
+annotate view ZC_Changes_DHL with
+{
+  @UI.facet: [{ id: 'Id',
+  purpose: #STANDARD,
+  type: #IDENTIFICATION_REFERENCE ,
+  label: 'Propuesta',
+  position: 10 }]
+  @UI: {
+  lineItem: [{
+  position: 10, label: 'ID',
+  importance: #HIGH }],
+  identification: [{ position: 10, label: 'Id' }]}
+//  @Search.defaultSearchElement: true
+  Id;
+  @UI: {
+  lineItem: [ { position: 20, label: 'Solicitante', importance:
+  #HIGH }],
+  identification: [ { position: 20, label: 'Solicitante' } ],
+  selectionField: [ { position: 20 }  ]
+  }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI.textArrangement: #TEXT_LAST
+  
+  SolicitanteId;
+  @UI.hidden: true
+  SolicitanteName;
+  @UI.hidden: true
+  Departamento;
+  @UI.hidden: true
+  Email;
+  @UI.hidden: true
+  FechaRegistro;
+  @UI.hidden: true
+  TChange;
+  @UI.hidden: true
+  RepoTrans;
+  @UI.hidden: true
+  Descripcion;
+  @UI.hidden: true
+  Prioridad;
+  @UI.hidden: true
+  ConsultorId;
+  @UI.hidden: true
+  ConsultorName;
+  @UI.hidden: true
+  Status;
+  @UI.hidden: true
+  FechaPlanEntre;
+//  /* Associations */
+//  _Documenta;
+//  element_name;
+
+}
