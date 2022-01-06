@@ -1,7 +1,7 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Consumer documentacion'
-@Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,

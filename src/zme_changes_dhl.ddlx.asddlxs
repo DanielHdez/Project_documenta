@@ -7,7 +7,7 @@
         title: {
             type: #STANDARD,
             label: 'Cambios propuestos',
-           value: 'Id'
+            value: 'Id'
                     }}}
 
 
@@ -17,51 +17,98 @@ annotate view ZC_Changes_DHL with
   purpose: #STANDARD,
   type: #IDENTIFICATION_REFERENCE ,
   label: 'Propuesta',
-  position: 10 }]
-  @UI: {
-  lineItem: [{
-  position: 10, label: 'ID',
-  importance: #HIGH }],
-  identification: [{ position: 10, label: 'Id' }]}
-//  @Search.defaultSearchElement: true
+  position: 10 },
+  { id: 'Documentos',
+    purpose: #STANDARD,
+  type: #LINEITEM_REFERENCE,
+  label: 'Documentos',
+  position: 20,targetElement:
+  '_Documenta' }]
+//  @UI: {
+//  lineItem: [{
+//  position: 10, label: 'ID',
+//  importance: #HIGH }],
+//  identification: [{ position: 10, label: 'Id' }]}
+  @Search.defaultSearchElement: true
   Id;
+  @UI: { lineItem: [{
+  position: 10, label: 'Nº Documento',
+  importance: #HIGH }],
+  identification: [{ position: 10, label: 'Nº Documento' }]}
+  @Search.defaultSearchElement: true
+  Documento;
   @UI: {
   lineItem: [ { position: 20, label: 'Solicitante', importance:
-  #HIGH }],
+  #HIGH, emphasized: true  }],
   identification: [ { position: 20, label: 'Solicitante' } ],
   selectionField: [ { position: 20 }  ]
   }
   @Search.defaultSearchElement: true
   @Search.fuzzinessThreshold: 0.8
   @UI.textArrangement: #TEXT_LAST
-  
-  SolicitanteId;
+  Solicitante;
   @UI.hidden: true
   SolicitanteName;
-  @UI.hidden: true
+  @UI: {
+   lineItem: [ { position: 40, label : 'Departamento', importance:
+  #HIGH }],
+   identification: [ { position: 40, label:  'Departamento' } ],
+   selectionField: [ { position: 40 } ] }
+  @Consumption.valueHelpDefinition: [{ entity :
+  {name: 'Zcds_departamento', element: 'IdDepartament' } }]
   Departamento;
-  @UI.hidden: true
+  @UI: {
+   lineItem: [ { position: 50, label : 'Email', importance:
+  #MEDIUM }],
+   identification: [{ position: 50, label: 'Email' }]}
   Email;
-  @UI.hidden: true
+  @UI: {
+  lineItem: [ { position: 60, label : 'Registro', importance:
+  #MEDIUM }]}
   FechaRegistro;
-  @UI.hidden: true
+  @UI: {
+  lineItem: [ { position: 70, label : 'Tipo Cambio', importance:
+  #MEDIUM }],
+  identification: [{ position: 70, label: 'Tipo de cambio' }]}
   TChange;
-  @UI.hidden: true
+  @UI: {
+  lineItem: [ { position: 80, label : 'Transaction/Report', importance:
+  #HIGH }],
+  identification: [{ position: 80, label: 'Transaction/Report' }]}
   RepoTrans;
-  @UI.hidden: true
+  @UI: {
+  lineItem: [ { position: 90, label : 'Descripción', importance:
+  #HIGH }],
+  identification: [{ position: 90, label: 'Descripción'}]}
+  @UI.multiLineText: true
   Descripcion;
-  @UI.hidden: true
+  @UI: {
+  lineItem: [ { position: 100, label : 'Prioridad', importance:
+  #HIGH }],
+  identification: [{ position: 100, label: 'Prioridad'}] }
   Prioridad;
-  @UI.hidden: true
-  ConsultorId;
+  @UI: {
+   lineItem: [ { position: 30, label : 'Consultor Asignado', importance:
+  #HIGH }],
+   identification: [ { position: 30, label: 'Consultor' } ],
+   selectionField: [ { position: 30 } ] }
+  @UI.textArrangement: #TEXT_LAST
+  @Consumption.valueHelpDefinition: [{ entity :
+  {name: 'Zcds_consultores', element: 'ConsultorId'}}]
+  Consultor;
   @UI.hidden: true
   ConsultorName;
-  @UI.hidden: true
+  @UI: {
+  lineItem: [ { position: 110, label : 'Status', importance:
+  #HIGH }],
+  identification: [{ position: 100, label: 'Estatus'}]}
   Status;
-  @UI.hidden: true
+  @UI: {
+  lineItem: [ { position: 120, label : 'Fecha de cierre', importance:
+  #MEDIUM}]}
   FechaPlanEntre;
-//  /* Associations */
-//  _Documenta;
-//  element_name;
+  //  /* Associations */
+  //  _Documenta;
+  //  element_name;
 
 }

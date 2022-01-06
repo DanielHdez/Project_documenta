@@ -4,4 +4,6 @@ define service ZSD_changes {
   expose Zc_Documenta_DHL;
   expose ZC_Pasos_dhl;
   expose ZC_requerimientos;
+  expose Zcds_departamento;
+  expose Zcds_consultores;
 }

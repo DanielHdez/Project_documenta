@@ -1,0 +1,74 @@
+managed; // implementation in class zbp_i_changes_dhl unique;
+strict;
+
+define behavior for ZI_changes_dhl alias Cambios
+implementation in class zbp_changes_dhl unique
+persistent table ZTCHANGES_DHL
+lock master
+authorization master ( instance )
+etag master lchg_date_time
+{
+
+  field ( readonly ) lchg_uname, lchg_date_time, crea_date_time, crea_uname, fecha_registro;
+  field (readonly, numbering : managed) id;
+  field ( mandatory ) departamento,descripcion,repo_trans, t_change;
+  field ( features : instance ) status, fecha_plan_entre;
+  create;
+  update;
+  delete;
+  //Validaciones
+  validation ValidateDepartment on save { create; field departamento; }
+  validation ValidateConsultant on save { create; field consultor_id; }
+  validation ValidateStatus     on save { create; field status; }
+
+  //Acciones
+  action ( features : instance ) AsignarConsultor result [1] $self;
+
+  //Asociaciones
+  association _Documenta { create; }
+  // Como el mapeo de la interface está igual que en la tabla me vale con el corresponding
+  mapping for ZTCHANGES_DHL corresponding;
+}
+
+define behavior for ZI_Documenta_DHL //alias <alias_name>
+implementation in class zbp_Documenta_DHL unique
+persistent table ZTDOCUMENTA_DHL
+lock dependent by _Incident
+authorization dependent by _Incident
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) id;
+  association _Incident;
+  association _Pasos { create; }
+  association _Requerimientos { create; }
+}
+
+define behavior for ZI_Pasos_dhl //alias <alias_name>
+implementation in class zbp_Pasos_dhl unique
+persistent table ZTPASOSI_DHL
+lock dependent by _Incident
+authorization dependent by _Incident
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) id, n_document;
+  association _Incident;
+  association _Documenta;
+}
+
+define behavior for ZI_requerimientos //alias <alias_name>
+implementation in class zbp_requerimientos_dhl unique
+persistent table ZTREQUERI_DHL
+lock dependent by _Incident
+authorization dependent by _Incident
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) id, n_document;
+  association _Incident;
+  association _Documenta;
+}

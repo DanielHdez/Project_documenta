@@ -1,0 +1,43 @@
+projection;
+strict;
+
+define behavior for ZC_Changes_DHL //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  field ( readonly) Solicitante;
+
+  use action AsignarConsultor;
+
+  use association _Documenta { create; }
+}
+
+define behavior for Zc_Documenta_DHL //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Incident;
+  use association _Pasos { create; }
+  use association _Requerimientos { create; }
+}
+
+define behavior for ZC_Pasos_dhl //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Incident;
+  use association _Documenta;
+}
+
+define behavior for ZC_requerimientos //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Incident;
+  use association _Documenta;
+}

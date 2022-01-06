@@ -1,0 +1,116 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {
+    headerInfo: {
+    typeName: 'Documento',
+    typeNamePlural: 'Documentos',
+    title: {
+        type: #STANDARD,
+        label: 'Documentos',
+        value: 'NDocument'
+    }
+}}
+annotate view Zc_Documenta_DHL with
+{
+  @UI.facet: [{ id: 'Documentos',
+  purpose: #STANDARD,
+  type: #IDENTIFICATION_REFERENCE ,
+  label: 'Documentos',
+  position: 10 },
+  { id: 'Pasos',
+  purpose: #STANDARD,
+  type: #LINEITEM_REFERENCE ,
+  label: 'Pasos',
+  position: 20, targetElement: '_Pasos' },
+  { id: 'Requerimientos',
+  purpose: #STANDARD,
+  type: #LINEITEM_REFERENCE ,
+  label: 'Requerimientos',
+  position: 30, targetElement: '_Requerimientos' } ]
+  @Search.defaultSearchElement: true
+  @UI: {
+  lineItem: [{
+  position: 10,
+  importance: #HIGH }],
+  identification: [{ position: 10, label: 'ID Cambio' }]}
+  Id;
+  @UI: {
+  lineItem: [ { position: 20, importance:
+  #HIGH }],
+  identification: [ { position: 20 } ],
+  selectionField: [ { position: 20 } ] }
+  NDocument;
+  @UI: {
+   lineItem: [ { position: 30, importance:
+  #HIGH, label: 'Tipo Documento' }],
+  identification: [ { position: 30, label: 'Tipo Documento' } ],
+  selectionField: [ { position: 30 } ] }
+  TipoDoc;
+  @UI: {
+  lineItem: [ { position: 40, importance:
+  #MEDIUM, label: 'Fecha Registro' }],
+  identification: [ { position: 40, label: 'Fecha Registro' } ]}
+  FechaRegistro;
+  @UI: {
+  lineItem: [ { position: 50, importance:
+  #MEDIUM, label: 'GMP' }],
+  identification: [ { position: 50, label: 'GMP' } ]}
+  SGmp;
+  @UI: {
+  lineItem: [ { position: 60, importance:
+  #MEDIUM, label: 'Repo/Trans' }],
+  identification: [ { position: 60, label: 'Repo/Trans' } ]}
+  RepoTrans;
+  @UI: {
+  lineItem: [ { position: 70, importance:
+  #HIGH, label: 'Descripción' }],
+  identification: [ { position: 70, label: 'Descripción' }]}
+  @UI.multiLineText: true
+  @Search.defaultSearchElement: true
+  Descripcion;
+  @UI: {
+  lineItem: [ { position: 80, label : 'Estatus', importance:
+  #HIGH }],
+  identification: [{ position: 80, label: 'Estatus'}] }
+  Status;
+  @UI: {
+  lineItem: [ { position: 80, label : 'Orden Transporte', importance:
+  #HIGH }],
+  identification: [{ position: 80, label: 'Orden Transporte'}] }
+  Ots;
+  @UI: {
+  lineItem: [ { position: 90, label : 'Fecha Evaluacion', importance:
+  #HIGH }],
+  identification: [{ position: 90, label: 'Fecha Evaluacion'}] }
+  FechaEvaluacion;
+  @UI: {
+  lineItem: [ { position: 100, label : 'Fecha Cambio', importance:
+  #HIGH }],
+  identification: [{ position: 100, label: 'Fecha Cambio'}] }
+  FechaCambio;
+    @UI: {
+  lineItem: [ { position: 110, label : 'Fecha Cierre', importance:
+  #HIGH }],
+  identification: [{ position: 110, label: 'Fecha Cierre'}] }
+  FechaCierre;
+    @UI: {
+  lineItem: [ { position: 120, label : 'Entorno', importance:
+  #MEDIUM }],
+  identification: [{ position: 120, label: 'Entorno'}] }
+  EntornoActual;
+    @UI: {
+  lineItem: [ { position: 130, label : 'Ruta', importance:
+  #MEDIUM }],
+  identification: [{ position: 130, label: 'Ruta'}] }
+  RutaDoc;
+  @UI.hidden: true
+  CreaDateTime;
+  @UI.hidden: true
+  CreaUname;
+  @UI.hidden: true
+  LchgDateTime;
+  @UI.hidden: true
+  LchgUname;
+
+
+}

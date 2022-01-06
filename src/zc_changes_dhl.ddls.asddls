@@ -13,8 +13,9 @@ provider contract transactional_query
 as projection on ZI_changes_dhl  {
   
     key id as Id,
+    documento as Documento,
     @ObjectModel.text.element: ['SolicitanteName']
-    s_solicitante_id as SolicitanteId,
+    s_solicitante_id as Solicitante,
     s_solicitante_name as SolicitanteName,
     departamento as Departamento,
     @Semantics.eMail.address: true
@@ -25,7 +26,7 @@ as projection on ZI_changes_dhl  {
     descripcion as Descripcion,
     prioridad as Prioridad,
    @ObjectModel.text.element: ['ConsultorName']
-    consultor_id as ConsultorId,
+    consultor_id as Consultor,
     consultor_name as ConsultorName,
     status as Status,
     fecha_plan_entre as FechaPlanEntre,
