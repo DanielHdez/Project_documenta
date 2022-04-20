@@ -30,6 +30,7 @@ CLASS lhc_Cambios IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD AsignarConsultor.
+
   ENDMETHOD.
 
   METHOD ValidateConsultant.

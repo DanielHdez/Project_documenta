@@ -23,8 +23,7 @@ etag master lchg_date_time
 
   //Acciones
   action ( features : instance ) AsignarConsultor result [1] $self;
-
-  //Asociaciones
+  //Asociacione
   association _Documenta { create; }
   // Como el mapeo de la interface está igual que en la tabla me vale con el corresponding
   mapping for ZTCHANGES_DHL corresponding;

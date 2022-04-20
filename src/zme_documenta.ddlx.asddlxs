@@ -36,13 +36,13 @@ annotate view Zc_Documenta_DHL with
   Id;
   @UI: {
   lineItem: [ { position: 20, importance:
-  #HIGH }],
+  #HIGH}],
   identification: [ { position: 20 } ],
   selectionField: [ { position: 20 } ] }
   NDocument;
   @UI: {
    lineItem: [ { position: 30, importance:
-  #HIGH, label: 'Tipo Documento' }],
+  #HIGH, label: 'Tipo Documento', type: #WITH_NAVIGATION_PATH, targetElement: 'Id'  }],
   identification: [ { position: 30, label: 'Tipo Documento' } ],
   selectionField: [ { position: 30 } ] }
   TipoDoc;
@@ -100,8 +100,8 @@ annotate view Zc_Documenta_DHL with
   EntornoActual;
     @UI: {
   lineItem: [ { position: 130, label : 'Ruta', importance:
-  #MEDIUM }],
-  identification: [{ position: 130, label: 'Ruta'}] }
+  #MEDIUM, type: #WITH_URL,url: 'RutaDoc'  }],
+  identification: [{ position: 130, label: 'Ruta', type: #WITH_URL,url: 'RutaDoc' }] }
   RutaDoc;
   @UI.hidden: true
   CreaDateTime;

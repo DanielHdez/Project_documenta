@@ -16,6 +16,7 @@ association to ZI_changes_dhl as _Incident on $projection.id = _Incident.id
     key id,
     key n_document,
     key requerimiento,
+    documento,
     descripcion,
     fecha_registro,
     user_ejecuta,

@@ -11,7 +11,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_idata_dhl IMPLEMENTATION.
+CLASS ZCL_IDATA_DHL IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

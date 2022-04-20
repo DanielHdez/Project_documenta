@@ -10,7 +10,6 @@
             value: 'Id'
                     }}}
 
-
 annotate view ZC_Changes_DHL with
 {
   @UI.facet: [{ id: 'Id',
@@ -24,42 +23,51 @@ annotate view ZC_Changes_DHL with
   label: 'Documentos',
   position: 20,targetElement:
   '_Documenta' }]
-//  @UI: {
-//  lineItem: [{
-//  position: 10, label: 'ID',
-//  importance: #HIGH }],
-//  identification: [{ position: 10, label: 'Id' }]}
+  //  @UI: {
+  //  lineItem: [{
+  //  position: 10, label: 'ID',
+  //  importance: #HIGH }],
+  //  identification: [{ position: 10, label: 'Id' }]}
   @Search.defaultSearchElement: true
   Id;
-  @UI: { lineItem: [{
+  @UI: {
+    lineItem: [{
   position: 10, label: 'Nº Documento',
-  importance: #HIGH }],
-  identification: [{ position: 10, label: 'Nº Documento' }]}
+  importance: #HIGH}],
+//  identification: [{ position: 10, label: 'Nº Documento' }],
+  dataPoint: {     
+      title: 'Nº Documento',
+      description: 'Número de propuesta'
+  }}
   @Search.defaultSearchElement: true
   Documento;
   @UI: {
   lineItem: [ { position: 20, label: 'Solicitante', importance:
-  #HIGH, emphasized: true  }],
-  identification: [ { position: 20, label: 'Solicitante' } ],
-  selectionField: [ { position: 20 }  ]
+  #HIGH}],
+  identification: [ { position: 20, label: 'Solicitante' } ]
+//  selectionField: [ { position: 20 }  ]
   }
   @Search.defaultSearchElement: true
   @Search.fuzzinessThreshold: 0.8
   @UI.textArrangement: #TEXT_LAST
+  //  @UI.hidden: true
   Solicitante;
-  @UI.hidden: true
-  SolicitanteName;
   @UI: {
-   lineItem: [ { position: 40, label : 'Departamento', importance:
-  #HIGH }],
-   identification: [ { position: 40, label:  'Departamento' } ],
-   selectionField: [ { position: 40 } ] }
+   lineItem: [ { position: 40, label : 'Departamento', importance: #HIGH
+  //   , value: 'Departamento',  type: #WITH_INTENT_BASED_NAVIGATION, url: 'Departamento'
+   , type: #WITH_NAVIGATION_PATH, targetElement: '_Departamentos'
+   }]
+   ,
+   identification: [ { position: 40, label:  'Departamento', value: '_Departamentos' } ],
+   selectionField: [ { position: 40 } ] 
+}
+//  //  @UI.dataFieldDefault: [{type: #WITH_URL, url: 'Departamento' }]
   @Consumption.valueHelpDefinition: [{ entity :
   {name: 'Zcds_departamento', element: 'IdDepartament' } }]
   Departamento;
   @UI: {
    lineItem: [ { position: 50, label : 'Email', importance:
-  #MEDIUM }],
+  #HIGH}],
    identification: [{ position: 50, label: 'Email' }]}
   Email;
   @UI: {
@@ -68,13 +76,16 @@ annotate view ZC_Changes_DHL with
   FechaRegistro;
   @UI: {
   lineItem: [ { position: 70, label : 'Tipo Cambio', importance:
-  #MEDIUM }],
+  #MEDIUM}],
   identification: [{ position: 70, label: 'Tipo de cambio' }]}
   TChange;
+  @Consumption.semanticObject: 'Departamento'
   @UI: {
   lineItem: [ { position: 80, label : 'Transaction/Report', importance:
-  #HIGH }],
-  identification: [{ position: 80, label: 'Transaction/Report' }]}
+  #HIGH, type: #WITH_NAVIGATION_PATH, targetElement: '_Departamentos'
+  }],
+  identification: [{ position: 80, label: 'Transaction/Report' }],
+  selectionField: [{position: 80 }]}
   RepoTrans;
   @UI: {
   lineItem: [ { position: 90, label : 'Descripción', importance:
@@ -89,10 +100,10 @@ annotate view ZC_Changes_DHL with
   Prioridad;
   @UI: {
    lineItem: [ { position: 30, label : 'Consultor Asignado', importance:
-  #HIGH }],
-   identification: [ { position: 30, label: 'Consultor' } ],
+  #HIGH, type: #WITH_NAVIGATION_PATH }],
+   identification: [ { position: 30, label: 'Consultor'} ],
    selectionField: [ { position: 30 } ] }
-  @UI.textArrangement: #TEXT_LAST
+//  @UI.textArrangement: #TEXT_LAST
   @Consumption.valueHelpDefinition: [{ entity :
   {name: 'Zcds_consultores', element: 'ConsultorId'}}]
   Consultor;
@@ -107,6 +118,8 @@ annotate view ZC_Changes_DHL with
   lineItem: [ { position: 120, label : 'Fecha de cierre', importance:
   #MEDIUM}]}
   FechaPlanEntre;
+  @UI.hidden: true
+  SolicitanteName;
   //  /* Associations */
   //  _Documenta;
   //  element_name;

@@ -1,0 +1,14 @@
+@Metadata.layer: #CORE
+annotate view Zcds_departamento with
+{
+  @UI.lineItem: [{position: 10}]
+  IdDepartament;
+  @UI.lineItem: [{position: 20}]
+  Nombre;
+  @UI.lineItem: [{position: 30}]
+  Direccion;
+  @UI.lineItem: [{position: 40}]
+  Telefono;
+  @UI.lineItem: [{position: 50}]
+  Email;
+}

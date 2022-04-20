@@ -1,7 +1,7 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'CONSUMER PASOS'
-@Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
@@ -13,6 +13,7 @@ as projection on ZI_Pasos_dhl {
     key id as Id,
     key n_document as NDocument,
     key paso as Paso,
+    documento as Documento,
     descripcion as Descripcion,
     fecha_registro as FechaRegistro,
     repo_trans as RepoTrans,

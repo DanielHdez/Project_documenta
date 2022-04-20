@@ -1,0 +1,82 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {
+    headerInfo: {
+    typeName: 'Requerimiento',
+    typeNamePlural: 'Requerimientos',
+    title: {
+        type: #STANDARD,
+        label: 'Requerimiento',
+        value: 'requerimiento'
+    }
+}}
+annotate view ZC_requerimientos with
+{
+  @UI.facet: [{ id: 'Documentos',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE ,
+    label: 'Requerimiento',
+    position: 10 }]
+  @Search.defaultSearchElement: true
+  @UI: {
+  lineItem: [{
+  position: 10,
+  importance: #HIGH }],
+  identification: [{ position: 10, label: 'ID Cambio' }]}
+  Id;
+  @UI: {
+  lineItem: [ { position: 20, importance:
+  #HIGH }],
+  identification: [ { position: 20 } ],
+  selectionField: [ { position: 20 } ] }
+  NDocument;
+  @UI: {
+  lineItem: [ { position: 30, importance:
+  #HIGH, label: 'Requerimiento' }],
+  identification: [ { position: 30, label: 'Requerimiento' } ],
+  selectionField: [ { position: 30 } ] }
+  Requerimiento;
+  @UI: {
+  lineItem: [ { position: 30, importance:
+  #HIGH, label: 'Documento' }],
+  identification: [ { position: 30, label: 'Documento' } ] }
+  Documento;
+  @UI: {  lineItem: [ { position: 110, importance:
+  #HIGH, label: 'Descripcion' }]}
+  @UI.identification: [ { position: 110, label: 'Descripcion' }]
+  @Search.defaultSearchElement: true
+  @UI.multiLineText: true
+  Descripcion;
+  @UI: {  lineItem: [ { position: 50, importance:
+  #HIGH, label: 'Fecha_registro' }]}
+  @UI.identification: [ { position: 50, label: 'Fecha Registro' }]  
+  @Search.defaultSearchElement: true
+  FechaRegistro;
+  @UI: {  lineItem: [ { position: 60, importance:
+  #HIGH, label: 'User Ejecuta' }]}
+  @UI.identification: [ { position: 60, label: 'User Ejecuta' }]
+  @Search.defaultSearchElement: true
+  UserEjecuta;
+  @UI: {  lineItem: [ { position: 70, importance:
+  #HIGH, label: 'Departamento' }]}
+  @UI.identification: [ { position: 70, label: 'Departamento' }]
+  @Search.defaultSearchElement: true
+  Departamento;
+  @UI: {  lineItem: [ { position: 80, importance:
+  #HIGH, label: 'Fecha_registro' }]}
+  @UI.identification: [ { position: 80, label: 'Estatus' }]
+  @Search.defaultSearchElement: true
+  Status;
+  @UI: {  lineItem: [ { position: 90, importance:
+  #HIGH, label: 'Validado' }]}
+  @UI.identification: [ { position: 90, label: 'Validado' }]
+  @Search.defaultSearchElement: true
+  Validado;
+  @UI: {  lineItem: [ { position: 100, importance:
+  #HIGH, label: 'Ruta' }]}
+  @UI.identification: [ { position: 100, label: 'Ruta' }]
+  @Search.defaultSearchElement: true
+  RutaDoc;
+
+
+}

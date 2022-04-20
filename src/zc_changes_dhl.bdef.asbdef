@@ -7,7 +7,7 @@ define behavior for ZC_Changes_DHL //alias <alias_name>
   use update;
   use delete;
 
-  field ( readonly) Solicitante;
+//  field ( readonly) Solicitante;
 
   use action AsignarConsultor;
 

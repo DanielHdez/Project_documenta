@@ -1,0 +1,84 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {
+    headerInfo: {
+    typeName: 'Paso',
+    typeNamePlural: 'Pasos',
+    title: {
+        type: #STANDARD,
+        label: 'Paso',
+        value: 'Paso'
+    }
+}}
+annotate view ZC_Pasos_dhl with
+{
+  @UI.facet: [{ id: 'Documentos',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE ,
+    label: 'Requerimiento',
+    position: 10 }]
+  @Search.defaultSearchElement: true
+  @UI: {
+  lineItem: [{
+  position: 10,
+  importance: #HIGH }],
+  identification: [{ position: 10, label: 'ID Cambio' }]}
+  Id;
+  @UI: {
+  lineItem: [ { position: 20, importance:
+  #HIGH }],
+  identification: [ { position: 20 } ],
+  selectionField: [ { position: 20 } ] }
+  NDocument;
+  @UI: {
+  lineItem: [ { position: 30, importance:
+  #HIGH, label: 'Paso' }],
+  identification: [ { position: 30, label: 'Paso' } ],
+  selectionField: [ { position: 30 } ] }
+  Paso;
+  @UI: {
+  lineItem: [ { position: 30, importance:
+  #HIGH, label: 'Documento', type: #WITH_NAVIGATION_PATH, targetElement: '_Incident.Documento' }],
+  identification: [ { position: 30, label: 'Documento' } ] }
+  Documento;
+  @UI: {  lineItem: [ { position: 100, importance:
+  #HIGH, label: 'Descripcion' }]}
+  @UI.identification: [ { position: 100, label: 'Descripcion' } ] 
+  @Search.defaultSearchElement: true
+  @UI.multiLineText: true
+  Descripcion;
+  @UI: {  lineItem: [ { position: 50, importance:
+  #HIGH, label: 'Fecha_registro' }]}
+  @UI.identification: [ { position: 50, label: 'Fecha_registro' }]
+  @Search.defaultSearchElement: true
+  FechaRegistro;
+  @UI: {  lineItem: [ { position: 60, importance:
+  #HIGH, label: 'Repo/Trans' }]}
+  @UI.identification: [ { position: 60, label: 'Repo/Tran' }]
+  @Search.defaultSearchElement: true
+  RepoTrans;
+  @UI: {  lineItem: [ { position: 70, importance:
+  #HIGH, label: 'Departamento' }]}
+  @Search.defaultSearchElement: true
+  @UI.identification: [ { position: 70, label: 'OT' }]
+  Ot;
+  @UI: {  lineItem: [ { position: 80, importance:
+  #HIGH, label: 'Status' }]}
+  @Search.defaultSearchElement: true
+  @UI.identification: [ { position: 80, label: 'Status' }]
+  Status;
+
+  @UI: {  lineItem: [ { position: 90, importance:
+  #HIGH, label: 'Cambios Realizados' }]}
+  @Search.defaultSearchElement: true
+  @UI.multiLineText: true
+  @UI.identification: [ { position: 90, label: 'Cambios Realizados' }]
+  CambiosRealizados;
+
+  @UI: {  lineItem: [ { position: 100, importance:
+  #HIGH, label: 'Ruta' }]}
+  @UI.identification: [ { position: 100, label: 'Ruta' }]
+ 
+  @Search.defaultSearchElement: true
+  RutaDoc;
+}
