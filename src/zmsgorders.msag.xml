@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMSGORDERS</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Mensajes</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMSGORDERS</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>El status no es valido marcar 1(Proceed), 2(in Process), o 3 (Finished).</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>
