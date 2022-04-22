@@ -1,0 +1,111 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {
+    headerInfo: {
+    typeName: 'Order',
+    typeNamePlural: 'Ordenes de venta',
+    title: {
+        type: #STANDARD,
+        label: 'Orden venta',
+        value: 'Id' 
+        },
+    imageUrl: 'Imagenurl',
+    description: { value: 'Email' }     
+        },
+        badge.headLine.label: 'Ordenes de Venta'
+     
+     
+     
+     }
+annotate view ZC_SALES_Head_DHL
+    with 
+{
+   @UI.facet: [
+  { id: 'Cabecera',
+  purpose: #STANDARD,
+  type: #IDENTIFICATION_REFERENCE ,
+  label: 'Orden',
+  position: 10 },
+  { id : 'ITEMS',
+  purpose: #STANDARD,
+  type: #LINEITEM_REFERENCE,
+  label: 'Item',
+  position: 22, 
+  targetElement: '_SalesItem'} ]
+
+  @UI: {
+  lineItem: [{
+  position: 10,
+  importance: #HIGH }]}
+  //identification: [{ position: 10, label: 'ID' }]}
+  @Search.defaultSearchElement: true
+  Id;
+  @UI: {
+  lineItem: [{
+  position: 50,
+  importance: #HIGH }],
+  identification: [{ position: 50, label: 'Email' }]}
+  Email;
+  @UI: {
+  lineItem: [{
+  position: 20,
+  importance: #HIGH }],
+  identification: [{ position: 20, label: 'Nombre' }]}
+  @UI.fieldGroup: [{qualifier: 'Name', position: 10 }]
+  Firstname;
+  @UI: {
+  lineItem: [{
+  position: 30,
+  importance: #HIGH }],
+  identification: [{ position: 30, label: 'Apellido' }]}
+  @UI.fieldGroup: [{qualifier: 'Name', position: 20 }]
+  Lasttname;
+  @UI: {
+  lineItem: [{
+  position: 40,
+  importance: #HIGH }],
+  identification: [{ position: 40, label: 'País' }],
+  selectionField: [ { position: 10 } ] }
+  @Consumption.valueHelpDefinition: [{ entity :
+  {name: 'I_Country', element: 'Country' } }]
+  @UI.textArrangement: #TEXT_LAST 
+  Country;
+  @UI: {
+  lineItem: [{
+  position: 50,
+  importance: #HIGH }],
+  identification: [{ position: 50, label: 'Creado el' }]}
+  Createon;
+  @UI: {
+  lineItem: [{
+  position: 60,
+  importance: #HIGH }],
+  identification: [{ position: 60, label: 'Entrega' }],
+  selectionField: [ { position: 20 } ] }
+  Deliverydate;
+  @UI: {
+  lineItem: [{
+  position: 70,
+  importance: #HIGH }],
+  identification: [{ position: 70, label: 'Status [1(Open)|2(Accepted)|3(Canceled)]' }],
+  selectionField: [ { position: 30 } ] }
+  Orderstatus;
+  @UI: { 
+  
+  /*lineItem: [{
+  iconUrl: '',
+  position: 05,
+  importance: #HIGH }],*/
+  identification: [{ position: 05, label: 'Imagen' }]
+  } 
+  Imagenurl;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+
+}

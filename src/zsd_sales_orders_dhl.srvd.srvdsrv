@@ -1,0 +1,7 @@
+@EndUserText.label: 'Definicion de servicio'
+define service ZSD_SALES_ORDERS_DHL {
+  expose ZC_SALES_Head_DHL;
+  expose ZC_SALES_ITEM_DHL;
+  expose I_Country;
+  expose I_Currency;
+}

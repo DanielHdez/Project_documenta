@@ -1,0 +1,20 @@
+projection;
+strict;
+
+define behavior for ZC_SALES_Head_DHL //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+  field ( readonly : update ) Email;
+  use association _SalesItem { create; }
+
+}
+
+define behavior for ZC_SALES_ITEM_DHL //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _SALESHEAD;
+}

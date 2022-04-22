@@ -14,7 +14,7 @@ association [0..1] to I_Country      as _Country on $projection.Country = _Count
     deliverydate as Deliverydate,
     orderstatus as Orderstatus,
     imagenurl as Imagenurl,
-    @Semantics.user.createdBy: true
+   // @Semantics.user.createdBy: true
     created_by as CreatedBy,
     @Semantics.systemDateTime.createdAt: true
     created_at as CreatedAt,

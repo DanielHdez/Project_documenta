@@ -3,13 +3,10 @@
 {
 "FROM":
 [
-"ZSALES_ITEM_DHL"
+"ZINT_UNIDADES"
 ],
 "ASSOCIATED":
-[
-"I_CURRENCY",
-"ZI_SALES_HEAD_DHL"
-],
+[],
 "BASE":
 [],
 "ANNO_REF":

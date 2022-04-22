@@ -1,0 +1,121 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {
+    headerInfo: {
+        typeName: 'Items',
+        typeNamePlural: 'Items',
+        title: {
+            type: #STANDARD,
+            label: 'Posiciones de la orden',
+            value: 'Id'
+                    },
+           description: {
+    type: #STANDARD,
+    label: 'Posicion',
+    value: 'Posicion',
+    targetElement: 'Email'
+}}}
+annotate view ZC_SALES_ITEM_DHL with
+{
+
+  @UI.facet: [{ id: 'Id',
+   purpose: #STANDARD,
+   type: #IDENTIFICATION_REFERENCE ,
+   label: 'Item',
+   position: 10 }]
+  //  @UI: {
+  //  lineItem: [{
+  //  position: 10, label: 'Id',
+  //  importance: #HIGH}],
+  //  identification: [{ position: 10, label: 'Nº Documento' }],
+  //  dataPoint: {
+  //  title: 'Id',
+  //  description: 'Id Orden'
+  //  }}
+  //  @Search.defaultSearchElement: true
+  @UI.hidden: true
+  Id;
+  @UI: {
+   lineItem: [{
+  position: 20, label: 'Email',
+  importance: #HIGH}],
+  //  identification: [{ position: 10, label: 'Nº Documento' }],
+  dataPoint: {
+     title: 'Email',
+     description: 'Email'
+  }}
+  @Search.defaultSearchElement: true
+  Email;
+  @UI: { lineItem: [ { position: 30, label: 'Position', importance:
+  #HIGH } ],
+  identification: [ { position: 30, label: 'Position' } ] }
+  @Search.defaultSearchElement: true
+  Posicion;
+  @UI: { lineItem: [ { position: 40, label: 'Name', importance:
+  #HIGH } ],
+  identification: [ { position: 40, label: 'Name' } ] }
+  @Search.defaultSearchElement: true
+  Name;
+  @UI: { lineItem: [ { position: 50, label: 'Description', importance:
+  #HIGH } ],
+  identification: [ { position: 50, label: 'Description' } ] }
+  @Search.defaultSearchElement: true
+  @UI.multiLineText: true
+  Description;
+  @UI: { lineItem: [ { position: 60, importance:
+  #HIGH } ],
+  identification: [ { position: 60, label: 'Release Date' } ] }
+  @Search.defaultSearchElement: true
+  Releasedate;
+  @UI: { lineItem: [ { position: 70, label: 'Discontinue date', importance:
+  #HIGH } ],
+  identification: [ { position: 70, label: 'Discontinue date' } ] }
+  @Search.defaultSearchElement: true
+  Discontinuedate;
+  @UI: { lineItem: [ { position: 80, label: 'Price', importance:
+  #HIGH } ],
+  identification: [ { position: 80, label: 'Price' } ] }
+  @Search.defaultSearchElement: true
+  Price;
+  @Consumption.valueHelpDefinition: [{entity: {name:
+  'I_Currency', element: 'Currency' }}]
+  Currency;
+  @UI: { lineItem: [ { position: 90, label: 'Height', importance:
+  #HIGH } ],
+  identification: [ { position: 90, label: ' Height' } ] }
+  @Search.defaultSearchElement: true
+  Height;
+  @UI: { lineItem: [ { position: 100, label: 'Weidth', importance:
+  #HIGH } ],
+  identification: [ { position: 100, label: 'Weidth' } ] }
+  @Search.defaultSearchElement: true
+  Weidth;
+  @UI: { lineItem: [ { position: 110, importance:
+  #HIGH } ],
+  identification: [ { position: 110 , label: 'Depth'} ] }
+  @Search.defaultSearchElement: true
+  Depth;
+  @UI: { lineItem: [ { position: 120, importance:
+  #HIGH } ],
+  identification: [ { position: 120, label: 'Quantity' } ] }
+  @Search.defaultSearchElement: true
+  Quantity;
+  // @UI: { lineItem: [ { position: 130, importance:
+  //#HIGH } ],
+  //identification: [ { position: 130, label: 'Unitofmesure' } ] }
+  @Consumption.valueHelpDefinition: [{entity: {name:
+    'ZCDS_Unidades', element: 'Unidad' }}]
+  Unitofmesure;
+   @Consumption.valueHelpDefinition: [{entity: {name:
+    'ZCDS_Unidades', element: 'Unidad' }}]
+  Unitofmesurel;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+
+}

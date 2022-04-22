@@ -1,0 +1,78 @@
+managed;
+strict;
+
+define behavior for ZI_SALES_HEAD_DHL alias HEAD
+implementation in class zbp_sales_head_dhl unique
+persistent table ZSALES_HEAD_DHL
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
+  field (readonly, numbering : managed) Id;
+  field ( mandatory ) Email;
+  field ( features : instance ) Email, Orderstatus, Createon;
+  create;
+  update;
+  delete;
+  association _SALESITEM { create; }
+  validation ValidateStatus on save { create; field Orderstatus; }
+  validation ValidateDeliveryDAte on save { create; field Createon, Deliverydate; }
+  mapping for zsales_head_dhl
+  {
+    Id = id;
+    Email = email;
+    Firstname = firstname;
+    Lasttname = lasttname;
+    Country = country;
+    Createon = createon;
+    Deliverydate = deliverydate;
+    Orderstatus = orderstatus;
+    Imagenurl = imagenurl;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+  }
+}
+
+define behavior for ZI_SALES_ITEM_DHL alias ITEMS
+implementation in class zbp_sales_item_dhl unique
+persistent table ZSALES_ITEM_DHL
+lock dependent by _SALESHEAD
+authorization dependent by _SALESHEAD
+//etag master <field_name>
+{
+  update;
+  delete;
+
+  field ( readonly ) id, Email, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
+  field (mandatory : create) Posicion,  Unitofmesure;
+  association _SALESHEAD;
+
+  validation ValidateUnitofMesure on save {  field Unitofmesure, Height, Weidth, Unitofmesurel, Depth; }
+  validation ValidateDate on save { field Releasedate, Discontinuedate; }
+  field ( features : instance ) Releasedate;
+
+  mapping for zsales_item_dhl
+  {
+    Id = id;
+    Posicion = posicion;
+    Name = name;
+    Description = description;
+    Releasedate = releasedate;
+    Discontinuedate = discontinuedate;
+    Price = price;
+    Height = height;
+    Weidth = weidth;
+    Depth = depth;
+    Quantity = quantity;
+    Unitofmesure = unitofmesure;
+    Unitofmesurel = unitofmesurel;
+    Currency = currency;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+  }
+}

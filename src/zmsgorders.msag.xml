@@ -14,6 +14,36 @@
      <MSGNR>001</MSGNR>
      <TEXT>El status no es valido marcar 1(Proceed), 2(in Process), o 3 (Finished).</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMSGORDERS</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>La fecha de creación no puuede ser inferior a la actual</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMSGORDERS</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>La fecha de entrega no puede ser inferior a la actual</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMSGORDERS</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>La fecha de creación so puede ser superior a la de entrega</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMSGORDERS</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Las unidades deben de añadirse para la cantidad</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMSGORDERS</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>La unidades son incorrectas</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

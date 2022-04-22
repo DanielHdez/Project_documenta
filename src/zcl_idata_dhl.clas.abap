@@ -11,14 +11,16 @@ ENDCLASS.
 
 
 
-CLASS ZCL_IDATA_DHL IMPLEMENTATION.
+CLASS zcl_idata_dhl IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
     DATA: lt_department  TYPE STANDARD TABLE OF ZDepartamentos,
-          lt_consultores TYPE STANDARD TABLE OF zint_consultores.
+          lt_consultores TYPE STANDARD TABLE OF zint_consultores,
+          lt_unidades    TYPE STANDARD TABLE OF zint_unidades.
     DATA: ls_department  TYPE ZDepartamentos,
-          ls_consultores TYPE zint_consultores.
+          ls_consultores TYPE zint_consultores,
+          ls_unidades    TYPE zint_unidades.
 *
     ls_department-id_departament = '001'.
     ls_department-d_name = 'Contabilidad'.
@@ -100,9 +102,36 @@ CLASS ZCL_IDATA_DHL IMPLEMENTATION.
     ls_consultores-especialidad = 'Abap'.
     APPEND ls_consultores TO lt_consultores.
 
+    ls_unidades-client       = '001'.
+    ls_unidades-id           = 'Kg'.
+    ls_unidades-description  = 'Kilogramo'.
+    APPEND ls_unidades TO lt_unidades.
+
+    ls_unidades-client       = '001'.
+    ls_unidades-id           = 'Gr'.
+    ls_unidades-description  = 'Gramos'.
+    APPEND ls_unidades TO lt_unidades.
+
+    ls_unidades-client       = '001'.
+    ls_unidades-id           = 'm'.
+    ls_unidades-description  = 'metros'.
+    APPEND ls_unidades TO lt_unidades.
+
+    ls_unidades-client       = '001'.
+    ls_unidades-id           = 'Cm'.
+    ls_unidades-description  = 'Centimetros'.
+    APPEND ls_unidades TO lt_unidades.
+
+    ls_unidades-client       = '001'.
+    ls_unidades-id           = 'l'.
+    ls_unidades-description  = 'Litros'.
+    APPEND ls_unidades TO lt_unidades.
+
+
     DELETE FROM: ZDepartamentos, zint_consultores .
     INSERT: ZDepartamentos FROM TABLE @lt_department,
-            zint_consultores FROM TABLE @lt_consultores.
+            zint_consultores FROM TABLE @lt_consultores,
+            zint_unidades FROM TABLE @lt_unidades.
     out->write( 'DONE!' ).
 
 

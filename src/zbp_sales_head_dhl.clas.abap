@@ -1,0 +1,5 @@
+CLASS zbp_sales_head_dhl DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_sales_head_dhl.
+ENDCLASS.
+
+CLASS zbp_sales_head_dhl IMPLEMENTATION.
+ENDCLASS.
